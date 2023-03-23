@@ -61,7 +61,7 @@ const {mobile} = useDisplay()
 const infoBullets = [
   {
     id: 0,
-    image: "src/assets/img/kylemontville.jpeg",
+    image: "./public/assets/img/kylemontville.jpeg",
     name: "Kyle Montville",
     title: "Developer & Owner",
     background: [
