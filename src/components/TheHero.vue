@@ -22,7 +22,7 @@
        </v-col>
 
         <v-col class="ma-auto" cols="8">
-          <v-img src="../assets/img/catprogrammer.jpg" max-height="400"/>
+          <v-img :src="heroImg" max-height="400"/>
 
         </v-col>
 
@@ -88,6 +88,7 @@ const {mobile} = useDisplay()
 const dialog = ref(false)
 const showConsultForm = ref(null)
 
+const heroImg = "../public/img/catprogrammer.jpg"
 const heroText = "CodingCat"
 const heroSubText = "Designer web solutions purrrfect for your small business."
 const heroBullets = reactive([
