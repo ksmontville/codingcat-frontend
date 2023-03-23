@@ -78,7 +78,6 @@ const toggleConsultForm = () => {
 const sendEmail = () => {
 
   if (from_name.valueOf && from_email.valueOf && message.value && packages.value) {
-    console.log(packages.value)
     emailjs.sendForm(serviceID, templateID, "form", publicKey)
     toggleConsultForm()
   }

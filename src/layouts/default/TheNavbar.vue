@@ -23,7 +23,7 @@
 <script setup>
   import {ref} from "vue";
 
-  const brand = "./src/assets/img/black-cat.svg"
+  const brand = "src/assets/img/black-cat.svg"
   const navLinks = [
     {
       id: 0, route: "/", name: "Home",
