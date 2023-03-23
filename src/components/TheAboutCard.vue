@@ -55,13 +55,13 @@
 
 <script setup>
 import {useDisplay} from "vuetify";
-
+import kyleImage from '@/assets/img/kylemontville.jpeg'
 const {mobile} = useDisplay()
 
 const infoBullets = [
   {
     id: 0,
-    image: "../../src/assets/img/kylemontville.jpeg",
+    image: kyleImage,
     name: "Kyle Montville",
     title: "Developer & Owner",
     background: [

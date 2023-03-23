@@ -1,7 +1,7 @@
 <template>
   <v-app-bar class="" color="primary" border flat rounded>
     <div>
-      <router-link to="/"><v-img src="../../assets/img/black-cat.svg" :width="48" cover /></router-link>
+      <router-link to="/"><v-img :src="brand" :width="48" cover /></router-link>
     </div>
     <v-app-bar-title text="" />
     <v-app-bar-nav-icon color="black" @click="isOpen = !isOpen" icon="menu"/>
@@ -22,8 +22,8 @@
 
 <script setup>
   import {ref} from "vue";
+  import brand from '@/assets/img/black-cat.svg'
 
-  const brand = "../../src/assets/img/black-cat.svg"
   const navLinks = [
     {
       id: 0, route: "/", name: "Home",

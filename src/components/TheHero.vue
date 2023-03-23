@@ -22,7 +22,7 @@
        </v-col>
 
         <v-col class="ma-auto" cols="8">
-          <v-img :src="heroImg" max-height="400"/>
+          <v-img :src="heroImage" max-height="400"/>
 
         </v-col>
 
@@ -81,6 +81,7 @@
 <script setup>
 import {reactive, ref} from "vue";
 import {useDisplay} from 'vuetify';
+import heroImage from '@/assets/img/catprogrammer.jpg'
 import TheConsultForm from '@/components/TheConsultForm'
 
 const {mobile} = useDisplay()
@@ -88,7 +89,6 @@ const {mobile} = useDisplay()
 const dialog = ref(false)
 const showConsultForm = ref(null)
 
-const heroImg = "../public/img/catprogrammer.jpg"
 const heroText = "CodingCat"
 const heroSubText = "Designer web solutions purrrfect for your small business."
 const heroBullets = reactive([
