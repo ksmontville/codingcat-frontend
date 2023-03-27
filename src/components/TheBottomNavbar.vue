@@ -12,7 +12,7 @@
 <!--    </v-btn>-->
   </v-bottom-navigation>
 
-  <v-bottom-navigation v-else>
+  <v-bottom-navigation v-else horizontal grow>
       <v-btn @click="footerLinks[2].click">
         <v-icon :icon="footerLinks[2].icon" />
         Log In
