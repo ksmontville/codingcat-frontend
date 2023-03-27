@@ -29,7 +29,7 @@
         "From design to deployment, you will be involved in the process every step of the way."},
     {id: 1, title: "Content Management", subtitle: "à la carte",
       text: "Choose between a content management system which will allow you to do basic edits yourself (text, images, blog posts, etc.), " +
-        "or elect for to allow CodingCat to manage more advanced, on-demand content edits for a small monthly fee."},
+        "or elect for to allow CodingCat to manage more advanced, on-demand content edits for a monthly fee."},
     {id: 2, title: "Managed Hosting", subtitle: "Maintenance, Security, and Deployment",
       text: "Your website will be served from a reliable, scalable, and performant webhost with minimal downtime. " +
         "CodingCat will take care of all maintenance, security, and deployment. " +

@@ -93,7 +93,8 @@ const planBullets = reactive([
     id: 2,
     plan: "Premium",
     description: "Basic or Extra package plus any custom integrations that your website may need such as an online storefront, " +
-      "user authentication and authorization, persistent data storage, social media and marketing connections, Google API services and more, " +
+      "user authentication and authorization, persistent data storage, social media and marketing connections, " +
+        "food delivery services, Google API services and more, " +
       "as well as unlimited edits for a fixed monthly fee (if not using a content management system).",
     cost: `Fixed cost estimated at $${2 * hourlyRate}/hour`,
     edits: `$${2 * hourlyRate}/month`,
