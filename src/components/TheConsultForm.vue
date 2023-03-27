@@ -19,7 +19,7 @@
       </v-sheet>
 
       <p class="body-text text-body-2 pa-4">{{ messageText }}</p>
-      <v-textarea v-model="message" label="Budget, deadlines, scopes, etc..." name="message" :rules="rules"/>
+      <v-textarea v-model="message" label="Budget, deadlines, features, etc..." name="message" :rules="rules"/>
       <v-btn color="highlight" class="align-self-center my-4" type="submit">Submit</v-btn>
     </v-form>
   </v-sheet>
