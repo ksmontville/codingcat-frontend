@@ -67,11 +67,12 @@ const planBullets = reactive([
       "We will work together to create a list of user stories, components, and deadlines for the project. " +
       "You will receive a complete Figma design file detailing the layout, color scheme, and basic functionality of your website before proceeding into coding. " +
       "Your website will be moved to a new webhost which will be managed by CodingCat. You may keep your current domain name. " +
-      "Includes ongoing maintenance, bug fixes, monthly reports on website performance and SEO, and personalized customer service. ",
+      "Includes ongoing maintenance, bug fixes, monthly reports on website performance and SEO, an online customer portal for managing " +
+      "invoices & payments, and personalized customer service. ",
     cost: `Fixed cost estimated at $${hourlyRate}/hour`,
     edits: `$${editRate}/hour`,
     hosting: "$0/month*",
-    delivery: "Approx. 6 weeks",
+    delivery: "Approx. 4 weeks",
     dialog: false,
 
   },
@@ -81,18 +82,19 @@ const planBullets = reactive([
     description: "Basic package plus a custom content management system (CMS) which will allow you to control the content of your webpage independently. " +
       "Your CMS will receive ongoing maintenance, package updates, security monitoring, and everything else necessary to keep your content flowing smoothly. " +
       "Includes a tutorial session in which you will learn to use your website CMS, set up users, upload images, create new pages, etc.",
-    cost: `Fixed cost estimated at $${hourlyRate}/hour`,
+    cost: `Fixed cost estimated at $${1.5*hourlyRate}/hour`,
     edits: "Unlimited",
     hosting: "$30/month*",
-    delivery: "Approx. 8 weeks",
+    delivery: "Approx. 6 weeks",
     dialog: false,
 
   },
    {
     id: 2,
     plan: "Premium",
-    description: "Basic or Extra package plus any custom integrations that your website may need, such as an online storefront, " +
-      "user authentication and authorization, social media connections, Google API services, and more.",
+    description: "Basic or Extra package plus any custom integrations that your website may need such as an online storefront, " +
+      "user authentication and authorization, persistent data storage, social media and marketing connections, Google API services and more, " +
+      "as well as unlimited edits for a fixed monthly fee (if not using a content management system).",
     cost: `Fixed cost estimated at $${2 * hourlyRate}/hour`,
     edits: `$${2 * hourlyRate}/month`,
     hosting: "Varies",

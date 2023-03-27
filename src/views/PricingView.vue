@@ -34,7 +34,7 @@ const pricingHeader = "Prices & Plans"
 const pricingText = "CodingCat will work closely with you during every step of the process, from design to deployment to ongoing service, " +
   "to ensure that your website is best serving the needs of your business."
 
-const pricingSubtext = "The CodingCat Process"
+const pricingSubtext = "CodingCat Step-by-Step"
 
 const priceTableHeader = "Choose from one of the plans listed below that best suit your business needs. " +
   "There are no fees for cancellation and you may cancel at any time."
@@ -43,7 +43,7 @@ const processBullets = reactive([
 
   {id: 0,
   title:  "Free Consultation",
-  text: "First, we begin with a free, one hour consultation via Zoom or Google Meet to discuss the needs of your business " +
+  text: "First, we begin with a free, one hour consultation via Google Meet (or phone if client prefers) to discuss the needs of your business " +
     "and determine if the scope of the project is achievable by CodingCat within a reasonable timeline."},
   {id: 1,
   title: "Draft Specifications",
@@ -56,13 +56,14 @@ const processBullets = reactive([
   {
     id: 3,
     title: "Initial Deposit",
-    text: "Before beginning work, client must agree to pay a non-refundable deposit equal to 25% of the agreed-upon project cost. " +
-      "The remaining 75% of the agreed-upon project cost is to be paid in full after the project has been successfully deployed."
+    text: "Before beginning work, client must create an online account and agree to pay a non-refundable deposit equal " +
+      "to 25% of the agreed-upon project cost. " +
+      "The remaining 75% of the agreed-upon project cost is to be paid in full via digital invoice after the project has been successfully deployed."
   },
   {id: 4,
   title: "Begin Work",
   text: "Then CodingCat will begin work on the project, making sure to stay in constant communication with the client regarding " +
-    "design work, project features, potential roadblocks, and other emergent details regarding client approval."},
+    "design work, project features, potential roadblocks, and other emergent details necessitating client input."},
   {id: 5,
   title: "Deployment",
   text: "Finally, CodingCat will walk the client through the end product and provide any tutorials or walkthroughs as needed or by request. " +
@@ -70,9 +71,11 @@ const processBullets = reactive([
     "and security needs of the project."},
   {id: 6,
   title: "Ongoing Service",
-  text: "Client agrees to pay the ongoing costs of editing, hosting, and maintenance (if applicable) for the life of the project, or until client " +
-    "wishes to end services with CodingCat. There are no fees for cancellation and you may cancel at any time. " +
-    "Client will receive a zip file containing all necessary project files for their own use."}
+  text: "Client will have access to an online customer portal where they may manage their subscriptions, invoices, payment methods, and more. " +
+    "Client agrees to pay the ongoing costs of editing, hosting, and maintenance (if applicable) for the life of the project, or until client " +
+    "wishes to end services with CodingCat. There are no fees for cancellation and you may cancel at the end of any billing cycle. " +
+    "Client will receive a zip file containing all necessary project files for their own use and the business relationship between " +
+    "client and CodingCat will end amicably."}
 
 ])
 
