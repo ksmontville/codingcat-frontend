@@ -10,9 +10,17 @@ import { createAuth0 } from '@auth0/auth0-vue'
 import vuetify from './vuetify'
 import pinia from '../store'
 import router from '../router'
-
+import { watch } from "vue";
 
 export function registerPlugins (app) {
+
+  watch(pinia.state, (state) => {
+    localStorage.clear()
+    localStorage.setItem("userData", JSON.stringify(state.userData))
+  },
+    {deep: true}
+  )
+
   loadFonts()
   app
     .use(vuetify)
