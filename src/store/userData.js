@@ -13,19 +13,37 @@ export const useUserDataStore = defineStore('userData',  () => {
 
   if (localStorage.getItem("userData")) {
     const getState = (JSON.parse(localStorage.getItem("userData") || null ))
-    console.log(getState)
     customerDomains.value = getState.customerDomains
     stripeCustomerID.value = getState.stripeCustomerID
     stripeCustomerData.value = getState.stripeCustomerData
   }
 
   async function getAccessToken() {
-    const response = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/token`)
+    const response = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/token`,
+      {
+        "username": import.meta.env.VITE_ACCESS_TOKEN_USERNAME,
+        "password": import.meta.env.VITE_ACCESS_TOKEN_PASSWORD,
+      },
+      {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      })
+    return response.data.access_token
+  }
+
+  async function getManagementToken() {
+    const token = await getAccessToken()
+    const response = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/management-token`,{}, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
     return response.data.access_token
   }
 
   async function getUserMetadata() {
-    const token = await getAccessToken()
+    const token = await getManagementToken()
     const response = await axios.get(`https://codingcatllc.us.auth0.com/api/v2/users/${user.value.sub}
 `, {
       headers: {

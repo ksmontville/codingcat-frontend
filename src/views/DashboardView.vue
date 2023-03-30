@@ -67,11 +67,6 @@
     })
   }
 
-
-  console.log(userData.stripeCustomerData)
-  
-
-
 </script>
 
 <style scoped>
