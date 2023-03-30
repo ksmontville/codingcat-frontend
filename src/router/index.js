@@ -1,4 +1,5 @@
 // Composables
+import { authGuard } from '@auth0/auth0-vue'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
@@ -37,7 +38,8 @@ const routes = [
       {
         path: 'dashboard',
         name: 'Dashboard',
-        component: () => import(/*webpackChunkName: "login" */ '@/views/DashboardView.vue')
+        component: () => import(/*webpackChunkName: "login" */ '@/views/DashboardView.vue'),
+        beforeEnter: authGuard,
       },
     ],
   },

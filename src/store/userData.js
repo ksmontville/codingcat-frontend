@@ -10,13 +10,15 @@ export const useUserDataStore = defineStore('userData',  () => {
   const customerDomains = ref("")
   const stripeCustomerID = ref("")
   const stripeCustomerData = ref("")
+  const stripeCustomerSubscriptions = ref("")
 
   if (localStorage.getItem("userData")) {
     const getState = (JSON.parse(localStorage.getItem("userData") || null ))
-    console.log(getState)
+    // console.log(getState)
     customerDomains.value = getState.customerDomains
     stripeCustomerID.value = getState.stripeCustomerID
     stripeCustomerData.value = getState.stripeCustomerData
+    stripeCustomerSubscriptions.value = getState.stripeCustomerSubscriptions
   }
 
   async function getAccessToken() {
@@ -39,10 +41,11 @@ export const useUserDataStore = defineStore('userData',  () => {
   async function getCustomerData() {
     const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/customer/${stripeCustomerID.value}`)
     stripeCustomerData.value = response.data
+    stripeCustomerSubscriptions.value = response.data.subscriptions
 
   }
 
-  return {loginWithRedirect, logout, getUserMetadata, getCustomerData,
-    user, isAuthenticated, customerDomains, stripeCustomerID, stripeCustomerData,
+  return {loginWithRedirect, logout, getUserMetadata, getCustomerData, getAccessToken,
+    user, isAuthenticated, customerDomains, stripeCustomerID, stripeCustomerData, stripeCustomerSubscriptions,
   }
 })

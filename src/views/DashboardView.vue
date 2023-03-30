@@ -21,10 +21,10 @@
           </v-col>
         <v-col>
           <v-card>
-            <v-card-title>My Subscriptions ({{customerSubscriptions.total_count}})</v-card-title>
+            <v-card-title>My Subscriptions ({{userData.stripeCustomerSubscriptions.total_count}})</v-card-title>
             <v-card-text>
               <v-list>
-                <v-list-item v-for="customerSubscription in customerSubscriptions.data" :key="customerSubscription.id">
+                <v-list-item v-for="customerSubscription in userData.stripeCustomerSubscriptions.data" :key="customerSubscription.id">
                   {{ customerSubscription.description }}
                 </v-list-item>
               </v-list>
@@ -68,9 +68,9 @@
   }
 
 
-  console.log(userData.stripeCustomerData)
-  
-
+  // console.log(userData.stripeCustomerData)
+  // console.log(userData.isAuthenticated)
+  // console.log(userData.stripeCustomerSubscriptions)
 
 </script>
 
