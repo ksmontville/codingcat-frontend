@@ -67,11 +67,14 @@
     })
   }
 
+<<<<<<< HEAD
 
   // console.log(userData.stripeCustomerData)
   // console.log(userData.isAuthenticated)
   // console.log(userData.stripeCustomerSubscriptions)
 
+=======
+>>>>>>> auth
 </script>
 
 <style scoped>
