@@ -12,7 +12,7 @@ export const useUserDataStore = defineStore('userData',  () => {
   const stripeCustomerData = ref("")
 
   if (localStorage.getItem("userData")) {
-    const getState = (JSON.parse(localStorage.getItem("userData")))
+    const getState = (JSON.parse(localStorage.getItem("userData") || null ))
     console.log(getState)
     customerDomains.value = getState.customerDomains
     stripeCustomerID.value = getState.stripeCustomerID

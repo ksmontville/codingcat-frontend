@@ -69,7 +69,7 @@
 
 
   console.log(userData.stripeCustomerData)
-  console.log(userData.isAuthenticated)
+  
 
 
 </script>
