@@ -51,24 +51,24 @@
 <script setup>
   import StripeCustomerPortal from "@/components/StripeCustomerPortal.vue";
   import { useUserDataStore } from "@/store/userData";
-  import {onBeforeMount, onMounted, onUpdated, ref, watch} from "vue";
+  import {onBeforeMount, onBeforeUnmount, onMounted, ref, watch} from "vue";
 
   const userData =  useUserDataStore()
 
   const customerSubscriptions = ref("")
 
+
   watch(userData,() => {customerSubscriptions.value = userData.stripeCustomerData.subscriptions} )
 
   if (userData.isAuthenticated) {
-    onMounted(async () => {
-      await userData.getUserMetadata()
-      await userData.getCustomerData()
+    onMounted( async () => {
+       await userData.getUserMetadata()
+       await userData.getCustomerData()
     })
   }
 
 
-
-  // console.log(userData.stripeCustomerSubscriptions)
+  console.log(userData.isAuthenticated)
 
 
 </script>
