@@ -9,13 +9,19 @@
   <v-navigation-drawer v-model="isOpen" location="right" color="secondary">
     <div class="pa-8">
       <v-list>
-        <v-list-item v-if="userData.isAuthenticated" :to="navLinks[4].route">
+
+        <v-list-item :to="navLinks[4].route">
           Dashboard
         </v-list-item>
 
-        <v-list-item v-else :to="navLinks[5].route">
-          Log In
+        <v-list-item v-if="userData.isAuthenticated" @click="userData.logout">
+          Log Out
         </v-list-item>
+
+        <v-list-item v-else @click="userData.loginWithRedirect">
+          Login In/Register
+        </v-list-item>
+
 
         <v-divider color="primary" thickness="4"/>
 
@@ -53,9 +59,9 @@
       id: 3, route: "contact", name: "Contact",
     },
     {id: 4, route: "dashboard", name: "Dashboard"},
-    {
-      id: 5, route: "login", name: "Login",
-    },
+    // {
+    //   id: 5, route: "login", name: "Login",
+    // },
   ]
 
   const isOpen = ref(false)

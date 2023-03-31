@@ -1,39 +1,25 @@
 <template>
-
-  <v-sheet class="d-flex flex-column align-center ma-4 pa-2" color="highlight" rounded>
-     <small class="text-center">
-        CodingCat, LLC is fully operational and ready to serve your business, but our new website is still under construction.
-      </small>
-      <small>
-        We ask for your paw-tience while we get set up!
-      </small>
-  </v-sheet>
-
-
   <v-sheet class="d-flex flex-column justify-center align-center">
 
-    <v-container class="pa-4">
+  <v-container class="pa-4">
 
+    <v-col class="" cols="12">
+      <v-container class="text-h2 text-md-h1 text-center">
+        {{ heroText }}
+      </v-container>
+    </v-col>
 
-       <v-col class="" cols="12">
-          <v-container class="text-h2 text-md-h1 text-center">
-            {{ heroText }}
-          </v-container>
-       </v-col>
+    <v-col class="ma-auto" cols="8">
+      <v-img :src="heroImage" max-height="400"/>
+    </v-col>
 
-        <v-col class="ma-auto" cols="8">
-          <v-img :src="heroImage" max-height="400"/>
-
-        </v-col>
-
-
-    </v-container>
+  </v-container>
 
     <v-container class="text-md-h2 mt-4 pa-4 text-center text-overline">
       {{ heroSubText }}
     </v-container>
 
-</v-sheet>
+  </v-sheet>
 
 
   <v-sheet color="" class="pa-2">
@@ -86,7 +72,6 @@ import TheConsultForm from '@/components/TheConsultForm'
 
 const {mobile} = useDisplay()
 
-const dialog = ref(false)
 const showConsultForm = ref(null)
 
 const heroText = "CodingCat"

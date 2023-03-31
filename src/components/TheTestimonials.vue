@@ -8,8 +8,8 @@
         <p class="body-text">{{ testimonial.text }}</p>
       </v-card-text>
       <v-rating v-model="testimonial.rating" color="secondary" half-increments readonly />
-      <v-card-actions class="">
-        <v-btn @click="openLink(testimonial.link)" color="secondary">See Website</v-btn>
+      <v-card-actions>
+        <v-btn @click="openLink(testimonial.link)" color="secondary" variant="outlined">See Website</v-btn>
       </v-card-actions>
       </v-card>
   </v-sheet>
