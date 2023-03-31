@@ -75,7 +75,7 @@
   }
 
   const openLink = (link) => {
-    window.open(link)
+    window.open(`https://${link}`)
   }
 
   watch(userData,() => {customerSubscriptions.value = userData.stripeCustomerData.subscriptions})
