@@ -9,7 +9,7 @@
 
     <v-container class="my-4">
       <v-row align="start" justify="center">
-        <v-col md="4">
+        <v-col cols="12" sm="6" md="6" lg="4">
           <v-card max-width="400">
             <v-sheet color="accent">
               <v-card-title>My Domains</v-card-title>
@@ -17,15 +17,15 @@
             <v-card-text>
               <v-list class="rounded">
                 <v-list-item v-for="customerDomain in userData.customerDomains" :key="customerDomain">
-                 <v-btn class="my-2" @click="openLink(customerDomain)">
-                  {{ customerDomain }}
+                 <v-btn class="pa-2 my-2" @click="openLink(customerDomain)">
+                  <small>{{ customerDomain }}</small>
                  </v-btn>
                 </v-list-item>
               </v-list>
             </v-card-text>
           </v-card>
           </v-col>
-        <v-col md="4">
+        <v-col cols="12" sm="6" md="6" lg="4">
           <v-card max-width="400">
             <v-sheet color="accent">
               <v-card-title>My Subscriptions ({{userData.stripeCustomerSubscriptions.total_count}})</v-card-title>
@@ -40,7 +40,7 @@
           </v-card>
         </v-col>
 
-        <v-col md="3">
+        <v-col cols="12" lg="3">
           <v-sheet class="d-flex flex-column align-center justify-center pa-4" color="highlight" rounded>
             <stripe-customer-portal :stripe-customer-id="userData.stripeCustomerID" class="my-4"/>
             <v-btn class="my-4" @click="toggleForm">Contact</v-btn>
