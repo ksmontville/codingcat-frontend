@@ -15,7 +15,7 @@ const props = defineProps(
 )
 
 const createPortalSession = async () => {
-  const response = await axios.post(`http://localhost:8000/api/customer/${props.stripeCustomerId}/create-customer-portal-session`)
+  const response = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/customer/${props.stripeCustomerId}/create-customer-portal-session`)
   window.open(response.data)
 }
 
