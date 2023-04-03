@@ -1,6 +1,6 @@
 <template>
 
-  <v-sheet class="my-4 pa-2">
+  <v-sheet class="my-4 ma-auto pa-2" max-width="800">
     <v-sheet class="text-h2 text-center pa-4">{{ pricingHeader }}</v-sheet>
     <p class="body-text text-body-1 pa-4">{{ pricingText }}</p>
     <v-sheet color="highlight" class="body-text text-h6 text-center pa-4 rounded my-2">
@@ -19,7 +19,7 @@
       </v-expansion-panels>
   </v-sheet>
 
-  <v-sheet class="my-8">
+  <v-sheet class="mx-auto my-8" max-width="800">
     <p class="body-text text-body-2 pa-4">{{ priceTableHeader }}</p>
     <the-price-table />
   </v-sheet>

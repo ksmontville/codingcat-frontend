@@ -1,6 +1,6 @@
 <template>
 
-  <v-sheet color="" class="d-flex flex-column pa-2">
+  <v-sheet color="" class="d-flex flex-column align-center justify-center ma-auto pa-2" max-width="800">
     <p class="text-h4 ma-4">Cat-alogue of Services</p>
     <v-expansion-panels variant="popout" multiple>
       <v-expansion-panel v-for="service in services" :key="service.id">

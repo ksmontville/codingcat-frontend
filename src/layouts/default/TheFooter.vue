@@ -1,6 +1,6 @@
 <template>
 
-  <v-footer color="secondary mb-12 pa-4" rounded>
+  <v-footer class="my-12 pa-4" color="secondary" rounded>
     <v-container>
       <v-row justify="center">
         <v-col cols="12" md="4" class="d-flex justify-center">
@@ -13,7 +13,7 @@
     </v-container>
   </v-footer>
 
-  <the-bottom-navbar />
+  <the-bottom-navbar/>
 
 </template>
 

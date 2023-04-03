@@ -4,7 +4,7 @@
     {{ aboutTitle }}
   </v-sheet>
 
-  <v-sheet class="pa-2 my-4">
+  <v-sheet class="pa-2 mx-auto my-4" max-width="1024">
     <the-about-card />
   </v-sheet>
 

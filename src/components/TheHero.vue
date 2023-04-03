@@ -22,11 +22,11 @@
   </v-sheet>
 
 
-  <v-sheet color="" class="pa-2">
+  <v-sheet class="pa-4">
     <v-container>
-      <v-row align="start">
+      <v-row align="start" justify="center">
         <v-col cols="12" v-for="heroBullet in heroBullets" :key="heroBullet.id">
-          <v-card color="secondary" class="d-flex flex-column pa-2">
+          <v-card color="secondary" class="d-flex flex-column ma-auto pa-2" max-width="800">
             <v-card-title @click="toggleDialog">{{ heroBullet.title }}</v-card-title>
             <v-card-text>
               <v-sheet color="secondary" class="body-text text-body-2">
@@ -38,7 +38,7 @@
                 {{ heroBullet.btnText }}
                 <v-icon color="highlight" class="ml-4" icon="md:info" />
               </v-btn>
-                <v-dialog v-model="heroBullet.dialog" :max-width="800" :fullscreen="mobile">
+                <v-dialog v-model="heroBullet.dialog" :max-width="800" :fullscreen="mobile" transition="scale-transition">
                   <v-sheet color="primary" class="d-flex flex-column align-center justify-center pa-4">
                     <p class="body-text text-body-1 pa-2">{{ heroBullet.description }}</p>
                     <v-btn color="accent" class="text-button ma-8" @click="heroBullet.dialog = false">Close</v-btn>
@@ -50,16 +50,18 @@
       </v-row>
     </v-container>
 
-    <v-sheet color="" class="d-flex flex-column align-center pa-4">
+    <v-sheet color="" class="d-flex flex-column align-center ma-auto pa-4" max-width="800">
       <p class="body-text text-body-1">{{ getStartedText }}</p>
       <v-btn class="text-button ma-8" size="x-large" color="accent" @click="toggleConsultForm">
         {{ showConsultForm ? "Close" : "Schedule"}}
       </v-btn>
     </v-sheet>
 
-    <v-sheet v-if="showConsultForm">
-      <the-consult-form />
-    </v-sheet>
+    <v-expand-transition>
+      <v-sheet v-if="showConsultForm">
+          <the-consult-form />
+      </v-sheet>
+    </v-expand-transition>
 
   </v-sheet>
 </template>

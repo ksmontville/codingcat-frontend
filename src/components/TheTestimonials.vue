@@ -1,7 +1,7 @@
 <template>
   <v-sheet color="" class="d-flex flex-column justify-center align-center pa-2">
     <p class="text-h4 ma-4">Satisfied Cat-stomers</p>
-    <v-card class="my-4 pa-4" max-width="800" v-for="testimonial in testimonials" variant="elevated" color="primary" rounded border>
+    <v-card class="my-4 pa-4" max-width="800" v-for="testimonial in testimonials" :key="testimonial.title" variant="elevated" color="primary" rounded border>
       <v-card-title>{{ testimonial.title }}</v-card-title>
       <v-card-subtitle>{{ testimonial.subtitle }}</v-card-subtitle>
       <v-card-text class="text-body-2">
