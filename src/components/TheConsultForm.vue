@@ -1,6 +1,6 @@
 <template>
 
-  <v-sheet v-if="consultFormActive" class="my-4" rounded>
+  <v-sheet v-if="consultFormActive" class="mx-auto my-4" rounded max-width="800">
     <v-form v-model="form" class="d-flex flex-column justify-center" validate-on="submit" @submit.prevent="sendEmail">
       <input type="hidden" :value="to_name" name="to_name">
       <v-text-field bg-color="" label="Name" v-model="from_name" name="from_name" :rules="rules"/>
