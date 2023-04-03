@@ -7,10 +7,9 @@
     serving businesses from any part of the United States.</p>
   </v-sheet>
 
-  <v-container fluid>
+  <v-container>
 
     <v-row align="start" justify="center">
-
       <v-col class="d-flex justify-center" sm="12" md="4">
         <v-card class="" min-width="300" max-width="400" >
           <v-card-title class="body-text text-h5 pa-4">CodingCat, LLC</v-card-title>
