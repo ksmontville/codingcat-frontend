@@ -17,7 +17,7 @@
             <v-card-text>
               <v-list class="rounded">
                 <v-list-item v-for="customerDomain in userData.customerDomains" :key="customerDomain">
-                 <v-btn class="pa-2 my-2" @click="openLink(customerDomain)">
+                 <v-btn class="pa-2 my-2" @click="openLink(customerDomain)" type="button">
                   <small>{{ customerDomain }}</small>
                  </v-btn>
                 </v-list-item>
@@ -43,7 +43,7 @@
         <v-col cols="12" lg="3">
           <v-sheet class="d-flex flex-column align-center justify-center pa-4" color="highlight" rounded>
             <stripe-customer-portal :stripe-customer-id="userData.stripeCustomerID" class="my-4"/>
-            <v-btn class="my-4" @click="toggleForm">Contact</v-btn>
+            <v-btn class="my-4" @click="toggleForm" type="button">Contact</v-btn>
           </v-sheet>
 
         </v-col>

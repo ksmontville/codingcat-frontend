@@ -1,36 +1,41 @@
 <template>
 
   <v-app-bar color="primary" border flat rounded>
-    <router-link to="/"><v-img :src="brand" :width="48" cover /></router-link>
+    <router-link to="/"><v-img :src="brand" :width="48" cover type="button" name="home"/></router-link>
     <v-app-bar-title v-if="userData.isAuthenticated">Hi, {{ userData.user.name }}!</v-app-bar-title>
     <v-app-bar-title v-else text="" />
 
+
+<!--    Desktop navlinks -->
     <v-container v-if="!mobile">
       <v-row align="center" justify="center">
         <v-col v-for="navLink in navLinks.slice(0,4)" :key="navLink.id">
-          <v-chip class="body-text text-h6" :to="navLink.route" variant="text" color="accent">{{ navLink.name }}</v-chip>
+          <v-chip class="navlinks body-text pa-4" :to="navLink.route" variant="text" color="accent" type="button">
+            {{ navLink.name }}
+          </v-chip>
         </v-col>
       </v-row>
     </v-container>
-  <v-app-bar-nav-icon color="black" v-if="mobile" @click="toggleDrawer" icon="menu"/>
+  <v-app-bar-nav-icon color="black" v-if="mobile" @click="toggleDrawer" icon="menu" type="button" name="menu button"/>
   </v-app-bar>
 
+<!--  Mobile navlinks -->
   <v-navigation-drawer v-if="mobile" v-model="drawer" location="right" color="secondary">
     <div class="pa-8">
       <v-list>
-        <v-list-item :to="navLinks[4].route">
+        <v-list-item :to="navLinks[4].route" type="button">
           Dashboard
         </v-list-item>
-        <v-list-item v-if="userData.isAuthenticated" @click="userData.logout">
+        <v-list-item v-if="userData.isAuthenticated" @click="userData.logout" type="button">
           Log Out
         </v-list-item>
-        <v-list-item v-else @click="userData.loginWithRedirect">
+        <v-list-item v-else @click="userData.loginWithRedirect" type="button">
           Login In/Register
         </v-list-item>
         <v-divider color="primary" thickness="4"/>
         <v-list-item v-for="navLink in navLinks.slice(0,4)"
                      :key="navLink.id"
-                     :to="navLink.route" :active=false>
+                     :to="navLink.route" :active=false type="button">
           <p class="nav-items body-text">{{ navLink.name }}</p>
         </v-list-item>
       </v-list>
@@ -76,5 +81,9 @@
 </script>
 
 <style scoped>
+
+.navlinks {
+  font-size: 1rem;
+}
 
 </style>

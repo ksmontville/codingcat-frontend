@@ -11,7 +11,8 @@
 
         <v-col :cols="mobile ? 12 : 4">
           <figure>
-            <v-img class="rounded-lg ma-auto" :src="infoBullet.image" max-width="400" />
+            <v-img class="rounded-lg ma-auto" :src="infoBullet.image" :alt="infoBullet.alt"
+                   :width="infoBullet.image.width" :height="infoBullet.image.height" max-width="400" />
             <figcaption class="text-center pa-2"><em>Kyle in his former physics classroom.</em></figcaption>
           </figure>
         </v-col>
@@ -38,13 +39,8 @@
               <v-sheet color="accent" class="text-h6 text-center rounded-lg my-4 pa-2">Background & Interests</v-sheet>
               <v-sheet color="primary" class="body-text text-body-1 rounded-lg pa-4">{{ infoBullet.description }}</v-sheet>
             </v-col>
-
           </v-row>
-
         </v-col>
-
-<!--        <v-col :cols="mobile ? 12 : 4" >-->
-<!--        </v-col>-->
       </v-row>
     </v-card-text>
   </v-card>
@@ -62,6 +58,7 @@ const infoBullets = [
   {
     id: 0,
     image: kyleImage,
+    alt: "Picture of developer and owner, Kyle Montville.",
     name: "Kyle Montville",
     title: "Developer & Owner",
     background: [

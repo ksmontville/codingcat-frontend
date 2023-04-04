@@ -1,14 +1,15 @@
 <template>
 
   <v-bottom-navigation v-if="userData.isAuthenticated" horizontal grow>
-    <v-btn v-for="footerLink in footerLinks.slice(0, 2)" :key="footerLink.id" :to="footerLink.route" @click="footerLink.click">
+    <v-btn v-for="footerLink in footerLinks.slice(0, 2)" :key="footerLink.id" :to="footerLink.route"
+           @click="footerLink.click" :name="footerLink.name" type="button">
       <v-icon :icon="footerLink.icon" />
       {{ footerLink.name }}
     </v-btn>
   </v-bottom-navigation>
 
   <v-bottom-navigation v-else horizontal grow>
-      <v-btn @click="footerLinks[2].click">
+      <v-btn @click="footerLinks[2].click" type="button">
         <v-icon :icon="footerLinks[2].icon" />
         Log In
       </v-btn>

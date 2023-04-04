@@ -1,9 +1,9 @@
 <template>
 
-  <v-sheet color="" class="d-flex flex-column align-center justify-center ma-auto pa-2" max-width="800">
-    <p class="text-h4 ma-4">Cat-alogue of Services</p>
+  <v-sheet color="white" class="d-flex flex-column align-center justify-center ma-auto" max-width="800">
+    <p class="text-h4 body-text text-center my-4">Cat-alogue of Services</p>
     <v-expansion-panels variant="popout" multiple>
-      <v-expansion-panel v-for="service in services" :key="service.id">
+      <v-expansion-panel v-for="service in services" :key="service.id" type="button">
         <v-expansion-panel-title color="secondary">
           <div class="d-flex flex-column justify-center">
             <p class="text-h6">{{ service.title }}</p>

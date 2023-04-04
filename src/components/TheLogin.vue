@@ -1,7 +1,7 @@
 <template>
 
-  <v-btn v-if="isAuthenticated" @click="logout">Log Out</v-btn>
-  <v-btn v-else @click="loginWithRedirect">Log In</v-btn>
+  <v-btn v-if="isAuthenticated" @click="logout" type="button">Log Out</v-btn>
+  <v-btn v-else @click="loginWithRedirect" type="button">Log In</v-btn>
 
 </template>
 

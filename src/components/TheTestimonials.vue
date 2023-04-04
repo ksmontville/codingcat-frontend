@@ -1,6 +1,6 @@
 <template>
-  <v-sheet color="" class="d-flex flex-column justify-center align-center pa-2">
-    <p class="text-h4 ma-4">Satisfied Cat-stomers</p>
+  <v-sheet color="white" class="d-flex flex-column justify-center align-center">
+    <p class="text-h4 body-text text-center">Satisfied Cat-stomers</p>
     <v-card class="my-4 pa-4" max-width="800" v-for="testimonial in testimonials" :key="testimonial.title" variant="elevated" color="primary" rounded border>
       <v-card-title>{{ testimonial.title }}</v-card-title>
       <v-card-subtitle>{{ testimonial.subtitle }}</v-card-subtitle>
@@ -9,7 +9,8 @@
       </v-card-text>
       <v-rating v-model="testimonial.rating" color="secondary" half-increments readonly />
       <v-card-actions>
-        <v-btn @click="openLink(testimonial.link)" color="secondary" variant="outlined">See Website</v-btn>
+        <v-btn class="my-4" @click="openLink(testimonial.link)" color="secondary"
+               variant="outlined" type="button">See Website</v-btn>
       </v-card-actions>
       </v-card>
   </v-sheet>

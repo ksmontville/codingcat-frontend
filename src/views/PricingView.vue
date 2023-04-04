@@ -1,28 +1,48 @@
 <template>
 
-  <v-sheet class="my-4 ma-auto pa-2" max-width="800">
-    <v-sheet class="text-h2 text-center pa-4">{{ pricingHeader }}</v-sheet>
-    <p class="body-text text-body-1 pa-4">{{ pricingText }}</p>
-    <v-sheet color="highlight" class="body-text text-h6 text-center pa-4 rounded my-2">
-      <strong>{{ pricingSubtext }}</strong>
-    </v-sheet>
-      <v-expansion-panels>
-        <v-expansion-panel bg-color="primary" v-for="processBullet in processBullets"
-        :key="processBullet.id">
-          <v-expansion-panel-title color="secondary">
-            <p class="body-text text-body-1 pa-2">{{ processBullet.id + 1}}. {{ processBullet.title }}</p>
-          </v-expansion-panel-title>
-          <v-expansion-panel-text>
-            <p class="body-text text-body-2 pa-2">{{ processBullet.text }}</p>
-          </v-expansion-panel-text>
-        </v-expansion-panel>
-      </v-expansion-panels>
-  </v-sheet>
+  <v-container fluid>
+    <v-row align="start" justify="center">
 
-  <v-sheet class="mx-auto my-8" max-width="800">
-    <p class="body-text text-body-2 pa-4">{{ priceTableHeader }}</p>
-    <the-price-table />
-  </v-sheet>
+      <v-col cols="12">
+          <v-sheet class="text-h2 text-center pa-4">{{ pricingHeader }}</v-sheet>
+          <p class="body-text text-body-1 my-4 pa-4">{{ pricingText }}</p>
+      </v-col>
+
+      <v-col cols="12" md="4">
+        <v-sheet class="my-4 ma-auto pa-2" max-width="800">
+
+          <v-sheet color="highlight" class="body-text text-h6 text-center pa-4 rounded my-2">
+            <strong>{{ pricingSubtext }}</strong>
+          </v-sheet>
+
+            <v-expansion-panels>
+              <v-expansion-panel bg-color="primary" v-for="processBullet in processBullets"
+              :key="processBullet.id" type="button">
+                <v-expansion-panel-title color="secondary">
+                  <p class="body-text text-body-1 pa-2">{{ processBullet.id + 1}}. {{ processBullet.title }}</p>
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                  <p class="body-text text-body-2 pa-2">{{ processBullet.text }}</p>
+                </v-expansion-panel-text>
+              </v-expansion-panel>
+            </v-expansion-panels>
+        </v-sheet>
+      </v-col>
+
+      <v-col cols="12" md="8">
+        <v-sheet class="my-4 ma-auto pa-2" max-width="800">
+
+          <v-sheet color="highlight" class="body-text text-h6 text-center pa-4 rounded my-2">
+            <strong>{{ priceTableHeader }}</strong>
+          </v-sheet>
+
+          <the-price-table />
+
+        </v-sheet>
+      </v-col>
+
+    </v-row>
+  </v-container>
 
 </template>
 
@@ -36,8 +56,7 @@ const pricingText = "CodingCat will work closely with you during every step of t
 
 const pricingSubtext = "CodingCat Step-by-Step"
 
-const priceTableHeader = "Choose from one of the plans listed below that best suit your business needs. " +
-  "There are no fees for cancellation and you may cancel at any time."
+const priceTableHeader = "Choose the plan that best suits your business needs."
 
 const processBullets = reactive([
 

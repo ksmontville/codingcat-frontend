@@ -1,16 +1,20 @@
 <template>
 
-  <v-sheet class="pa-4">
-    <p class="text-h2 text-center my-8">{{ contactTitle }}</p>
-    <p class="body-text text-body-1 my-4">
-    CodingCat operates remotely from the San Francisco Bay Area, but we are capable and excited to begin
-    serving businesses from any part of the United States.</p>
-  </v-sheet>
-
-  <v-container>
+  <v-container fluid>
 
     <v-row align="start" justify="center">
-      <v-col class="d-flex justify-center" sm="12" md="4">
+
+      <v-col cols="12">
+
+        <v-sheet class="pa-4">
+          <p class="text-h2 text-center">{{ contactTitle }}</p>
+          <p class="body-text text-body-1 my-8">
+          CodingCat operates remotely from the San Francisco Bay Area, but we are capable and excited to begin
+          serving businesses from any part of the United States.</p>
+        </v-sheet>
+      </v-col>
+
+      <v-col cols="12" md="6" class="d-flex justify-center mx-auto">
         <v-card class="" min-width="300" max-width="400" >
           <v-card-title class="body-text text-h5 pa-4">CodingCat, LLC</v-card-title>
             <v-card-text class="pa-4">
@@ -23,7 +27,7 @@
         </v-card>
       </v-col>
 
-      <v-col class="d-flex justify-center" sm="12" md="8">
+      <v-col cols="12" md="6" class="d-flex justify-center mx-auto">
         <v-card max-width="600" >
           <v-card-title class="body-text text-h5 pa-4">Let's Chat</v-card-title>
             <v-card-text class="pa-4">

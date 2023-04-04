@@ -1,6 +1,6 @@
 <template>
   <v-form @submit.prevent="createPortalSession">
-    <v-btn type="submit">
+    <v-btn type="submit" name="submit">
       Manage Account
     </v-btn>
   </v-form>
