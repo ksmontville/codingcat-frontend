@@ -16,7 +16,7 @@
         </v-col>
       </v-row>
     </v-container>
-  <v-app-bar-nav-icon color="black" v-if="mobile" @click="toggleDrawer" icon="menu" type="button" name="menu button"/>
+  <v-app-bar-nav-icon color="black" v-if="mobile" @click="toggleDrawer" type="button" name="menu button"/>
   </v-app-bar>
 
 <!--  Mobile navlinks -->

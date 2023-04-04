@@ -1,6 +1,6 @@
 <template>
 
-  <v-container>
+  <v-container fluid>
     <v-row align="start" justify="center">
 
       <v-col cols="12">
@@ -19,7 +19,7 @@
           <v-card-actions>
             <v-btn color="primary" size="small" variant="elevated" @click="heroBullet.dialog = true" type="button">
               {{ heroBullet.btnText }}
-              <v-icon color="secondary" class="ml-4" icon="md:info" />
+              <v-icon color="secondary" class="ml-4" :icon="mdiCat" />
             </v-btn>
               <v-dialog v-model="heroBullet.dialog" :max-width="800" :fullscreen="mobile" transition="scale-transition">
                 <v-sheet color="primary" class="d-flex flex-column align-center justify-center pa-4">
@@ -60,6 +60,7 @@
 import TheConsultForm from "@/components/TheConsultForm.vue";
 import {useDisplay} from "vuetify";
 import {reactive, ref} from "vue";
+import { mdiCat } from '@mdi/js'
 
 const {mobile} = useDisplay()
 

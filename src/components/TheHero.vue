@@ -32,12 +32,9 @@ const heroSubText = "Designer web solutions purrrfect for your small business."
 
 <style scoped>
 
-.hero-text {
+.hero-subtext {
   color: #14274E;
 }
 
-.hero-subtext {
-  color: #9BA4B4;
-}
 
 </style>

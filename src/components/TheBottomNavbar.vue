@@ -19,8 +19,10 @@
 
 <script setup>
   import {useUserDataStore} from "@/store/userData";
+  import { mdiLogin, mdiLogout, mdiViewDashboard } from '@mdi/js'
 
   const userData = useUserDataStore()
+
 
   const footerLinks = [
     // {
@@ -36,13 +38,13 @@
     //   id: 3, route: "contact", name: "Contact", icon: "chat",
     // },
     {
-      id: 0, route: "dashboard", name: "Dashboard", icon: "dashboard"
+      id: 0, route: "dashboard", name: "Dashboard", icon: mdiViewDashboard,
     },
     {
-      id: 1, route: "/", name: "Log Out", icon: "logout", click: userData.logout
+      id: 1, route: "/", name: "Log Out", icon: mdiLogout, click: userData.logout
     },
     {
-      id: 2, route: "login", name: "Log In", icon: "login", click: userData.loginWithRedirect
+      id: 2, route: "login", name: "Log In", icon: mdiLogin, click: userData.loginWithRedirect
     },
   ]
 

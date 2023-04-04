@@ -11,19 +11,17 @@ import 'vuetify/styles'
 
 // Composables
 import { createVuetify } from 'vuetify'
-import { md1, md2, md3 } from 'vuetify/blueprints'
-import { aliases, md } from 'vuetify/iconsets/md'
-import { mdi } from "vuetify/lib/iconsets/mdi";
+import { md3 } from 'vuetify/blueprints'
+import { aliases, mdi } from 'vuetify/iconsets/mdi-svg'
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
   blueprint: md3,
   icons: {
-    defaultSet: 'md',
+    defaultSet: 'mdi',
     aliases,
     sets: {
-      md,
-      mdi
+      mdi,
     }
   },
   theme: {
