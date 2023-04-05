@@ -23,7 +23,6 @@
 
   const userData = useUserDataStore()
 
-
   const footerLinks = [
     // {
     //   id: 0, route: "/", name: "Home",

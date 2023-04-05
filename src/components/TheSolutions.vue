@@ -9,21 +9,24 @@
 
       <v-col cols="12" md="4" v-for="heroBullet in heroBullets" :key="heroBullet.id">
 
-        <v-card color="secondary" class="d-flex flex-column ma-auto pa-2" max-width="400" min-height="224">
+        <v-card :color="heroBullet.id % 2 === 0 ? 'secondary' : 'primary'" class="d-flex flex-column ma-auto pa-2" max-width="400" height="224">
           <v-card-title @click="toggleDialog">{{ heroBullet.title }}</v-card-title>
-          <v-card-text>
-            <v-sheet color="secondary" class="body-text text-body-2">
-              {{ heroBullet.text }}
-            </v-sheet>
+          <v-card-text class="body-text text-body-2 my-4">
+            {{ heroBullet.text }}
           </v-card-text>
           <v-card-actions>
-            <v-btn color="primary" size="small" variant="elevated" @click="heroBullet.dialog = true" type="button">
+            <v-btn :color="heroBullet.id % 2 === 0 ? 'primary' : 'secondary'" size="small" variant="elevated"
+                   @click="heroBullet.dialog = true" type="button">
               {{ heroBullet.btnText }}
-              <v-icon color="secondary" class="ml-4" :icon="mdiCat" />
+              <v-icon :color="heroBullet.id % 2 === 0 ? 'secondary' : 'primary'" class="ml-4" :icon="mdiCat" />
             </v-btn>
               <v-dialog v-model="heroBullet.dialog" :max-width="800" :fullscreen="mobile" transition="scale-transition">
                 <v-sheet color="primary" class="d-flex flex-column align-center justify-center pa-4">
-                  <p class="body-text text-body-1 pa-4">{{ heroBullet.description }}</p>
+                  <p class="body-text text-body-1 text-justify pa-4">
+                    <v-divider color="secondary" thickness="8" class="rounded my-4" />
+                    {{ heroBullet.description }}
+                    <v-divider color="secondary" thickness="8" class="rounded my-4" />
+                  </p>
                   <v-btn color="accent" class="text-button ma-8"
                          @click="heroBullet.dialog = false" type="button">Close</v-btn>
                 </v-sheet>
@@ -33,27 +36,31 @@
       </v-col>
 
       <v-col>
-        <v-sheet class="d-flex flex-column align-center ma-auto pa-4" max-width="800">
-          <p class="body-text text-body-1">{{ scheduleText }}</p>
-          <v-btn class="text-button mt-8" size="x-large" color="accent" @click="toggleConsultForm" type="button">
-            {{ showConsultForm ? "Close" : "Schedule"}}
-          </v-btn>
-        </v-sheet>
+        <v-card color="primary" class="d-flex flex-column ma-auto pa-2" max-width="400" height="224">
+          <v-card-title>Get Started</v-card-title>
+          <v-card-text class="body-text text-body-2 mt-4">
+            {{ scheduleText }}
+          </v-card-text>
+          <v-card-actions class="align-self-center">
+            <v-btn color="secondary" variant="elevated" @click="toggleConsultForm" type="button">
+              <p class="ml-4">{{ showConsultForm ? "Close" : "Click Here to Schedule"}}</p>
+              <v-icon class="ml-4" :icon="mdiCat" />
+            </v-btn>
+          </v-card-actions>
+        </v-card>
       </v-col>
 
-      <v-col cols="12">
+      <v-col class="mt-4" cols="12">
         <v-expand-transition>
           <v-sheet v-if="showConsultForm">
-              <the-consult-form />
+            <p class="text-h6 text-center pa-2">Schedule Your Free Consultation</p>
+            <the-consult-form />
           </v-sheet>
         </v-expand-transition>
       </v-col>
 
     </v-row>
   </v-container>
-
-
-
 </template>
 
 <script setup>
@@ -62,7 +69,7 @@ import {useDisplay} from "vuetify";
 import {reactive, ref} from "vue";
 import { mdiCat } from '@mdi/js'
 
-const {mobile} = useDisplay()
+const { mobile } = useDisplay()
 
 const solutionsText = "The Cat's Meow"
 const scheduleText = "Schedule a free, one-hour remote consultation to discuss the needs of your business and how CodingCat can help maximize your web capabilities."

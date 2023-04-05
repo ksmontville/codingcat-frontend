@@ -3,8 +3,8 @@
   <v-sheet v-if="consultFormActive" class="mx-auto my-4" rounded max-width="800">
     <v-form v-model="form" class="d-flex flex-column justify-center" validate-on="submit" @submit.prevent="sendEmail">
       <input type="hidden" :value="to_name" name="to_name">
-      <v-text-field bg-color="" label="Name" v-model="from_name" name="from_name" :rules="rules"/>
-      <v-text-field bg-color="" label="Email" v-model="from_email" name="from_email" :rules="rules"/>
+      <v-text-field bg-color="" label="Your Name" v-model="from_name" name="from_name" :rules="rules"/>
+      <v-text-field bg-color="" label="Contact Email" v-model="from_email" name="from_email" :rules="rules"/>
 
       <v-select v-model="packages" name="packages" multiple chips closable-chips clear-icon="mdi-close" bg-color="secondary"
                 :items="formItems"
@@ -41,7 +41,7 @@ import emailjs from "@emailjs/browser";
 const consultFormActive = ref(true)
 const datePickerText = "Select up to three dates in which you are available for a one-hour window."
 const messageText = "Please include any other details that we should know."
-const messageSent = "Thank you for your interest in CodingCat! We'll check our schedule and get back to you as soon as possible."
+const messageSent = "Thank you for your interest in CodingCat! You'll hear from us soon."
 
 const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID

@@ -1,6 +1,6 @@
 <template>
 
-  <v-container class="mt-8">
+  <v-container class="my-8">
 
     <v-row align="center" justify="center">
 

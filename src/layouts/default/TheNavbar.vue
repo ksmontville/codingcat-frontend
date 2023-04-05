@@ -4,19 +4,18 @@
     <router-link to="/"><v-img :src="brand" :width="48" cover type="button" name="home"/></router-link>
     <v-app-bar-title v-if="userData.isAuthenticated">Hi, {{ userData.user.name }}!</v-app-bar-title>
     <v-app-bar-title v-else text="" />
+    <v-app-bar-nav-icon color="black" v-if="mobile" @click="toggleDrawer" type="button" name="menu button"/>
 
 
 <!--    Desktop navlinks -->
-    <v-container v-if="!mobile">
-      <v-row align="center" justify="center">
+    <v-container v-if="!mobile" class="w-50">
+      <v-row align="center" justify="center" dense>
         <v-col v-for="navLink in navLinks.slice(0,4)" :key="navLink.id">
-          <v-chip class="navlinks body-text pa-4" :to="navLink.route" variant="text" color="accent" type="button">
-            {{ navLink.name }}
-          </v-chip>
+          <v-chip class="body-text pa-4" :to="navLink.route" variant="text"
+                  color="accent" type="button" :text="navLink.name" />
         </v-col>
       </v-row>
     </v-container>
-  <v-app-bar-nav-icon color="black" v-if="mobile" @click="toggleDrawer" type="button" name="menu button"/>
   </v-app-bar>
 
 <!--  Mobile navlinks -->
@@ -81,9 +80,5 @@
 </script>
 
 <style scoped>
-
-.navlinks {
-  font-size: 1rem;
-}
 
 </style>

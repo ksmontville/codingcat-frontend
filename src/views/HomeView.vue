@@ -7,21 +7,21 @@
       </v-col>
     </v-row>
 
-    <v-divider color="secondary" :thickness="mobile? 4 : 12" rounded />
+    <v-divider color="secondary" :thickness="mobile? 4 : 12" class="mb-4 rounded"/>
 
     <v-row align="baseline" justify="center">
       <v-col md="12">
-        <the-solutions />
-      </v-col>
 
-      <v-divider color="secondary" :thickness="mobile? 4 : 12" rounded />
+          <the-solutions />
+
+      </v-col>
 
       <v-col cols="12" md="6" class="my-4">
         <the-services />
       </v-col>
 
       <v-col cols="12" md="6">
-         <the-testimonials />
+       <the-testimonials />
       </v-col>
 
     </v-row>
