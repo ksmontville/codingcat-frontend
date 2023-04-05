@@ -14,7 +14,11 @@
             <v-btn class="text-button ma-4" @click="planBullet.dialog = true">View</v-btn>
               <v-dialog v-model="planBullet.dialog" max-width="800" :fullscreen="mobile" transition="scale-transition">
                 <v-sheet color="primary" class="d-flex flex-column justify-center align-center body-text text-body-1 pa-4">
-                  <p class="body-text text-body-1 pa-4">{{ planBullet.description }}</p>
+                  <p class="body-text text-body-1 pa-4">
+                    <v-divider color="secondary" thickness="8" class="rounded my-4" />
+                    {{ planBullet.description }}
+                    <v-divider color="secondary" thickness="8" class="rounded my-4" />
+                  </p>
                   <v-btn color="secondary" class="text-button ma-8" @click="planBullet.dialog = false"
                          size="large" type="button">
                     Close
