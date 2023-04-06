@@ -26,7 +26,7 @@
                 <v-card-text>
                   <v-list bg-color="primary" v-for="bullet in infoBullet.background">
                     <v-list-item class="text-body-1">
-                      <v-icon icon="code" />
+                      <v-icon :icon="mdiCodeBraces" />
                       {{ bullet }}
                     </v-list-item>
                   </v-list>
@@ -51,6 +51,7 @@
 
 <script setup>
 import {useDisplay} from "vuetify";
+  import { mdiCodeBraces } from '@mdi/js'
 import kyleImage from '@/assets/img/kylemontville.jpeg'
 const {mobile} = useDisplay()
 
