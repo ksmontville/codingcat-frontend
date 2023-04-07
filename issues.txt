@@ -1,0 +1,4 @@
+Login error when user logs in for the very 1st time and refreshes the page before logging out
+    --> Causes the post-login action to fail, get stuck?
+    --> Stripe integration still triggers, but users is unable to be authenticated for logging in
+    --> Logging in for the first time, then logging out, then refreshing the page shows no issues
