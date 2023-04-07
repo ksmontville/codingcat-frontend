@@ -46,7 +46,7 @@ export const useUserDataStore = defineStore('userData',  () => {
 
   async function getUserMetadata() {
     const token = await getManagementToken()
-    const response = await axios.get(`https://codingcatllc.us.auth0.com/api/v2/users/${user.value.sub}
+    const response = await axios.get(`${import.meta.env.VITE_AUTH0_MANAGEMENT_API_URL}/users/${user.value.sub}
 `, {
       headers: {
         Authorization: `Bearer ${token}`
