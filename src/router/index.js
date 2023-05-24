@@ -41,6 +41,11 @@ const routes = [
         component: () => import(/*webpackChunkName: "login" */ '@/views/DashboardView.vue'),
         beforeEnter: authGuard,
       },
+      {
+        path: '/:pathMatch(.*)*',
+        name: 'error',
+        component: () => import(/*webpackChunkName: "error-page": */ '@/views/ErrorPage.vue'),
+    },
     ],
   },
 ]
@@ -48,6 +53,10 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+    scrollBehavior()
+  {
+    return {top: 0}
+  }
 })
 
 export default router
