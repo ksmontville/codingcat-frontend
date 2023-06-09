@@ -63,7 +63,7 @@ const {mobile} = useDisplay()
 const tableHeaders = ["Plan", "Description", "Cost", "Edits", "Hosting", "Delivery"]
 const minSheetWidth = 124
 const hourlyRate = 50
-const editRate = 25
+const editRate = 30
 const finePrint = "* Hosting costs calculated at current webhost pricing and are subject to change at any time."
 
 const planBullets = reactive([
