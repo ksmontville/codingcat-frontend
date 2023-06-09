@@ -20,7 +20,9 @@
 <script setup>
   import {useUserDataStore} from "@/store/userData";
   import { mdiLogin, mdiLogout, mdiViewDashboard } from '@mdi/js'
+  import {useDisplay} from "vuetify";
 
+  const { mobile } = useDisplay()
   const userData = useUserDataStore()
 
   const footerLinks = [

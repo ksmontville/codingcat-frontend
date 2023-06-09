@@ -11,13 +11,15 @@
     </v-row>
   </v-footer>
 
-  <the-bottom-navbar/>
+  <the-bottom-navbar v-if="mobile"/>
 
 </template>
 
 <script setup>
   import TheBottomNavbar from '@/components/TheBottomNavbar'
+  import {useDisplay} from "vuetify";
 
+  const { mobile } = useDisplay()
 </script>
 
 <style scoped>

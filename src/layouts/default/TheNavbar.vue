@@ -11,8 +11,15 @@
     <v-container v-if="!mobile" class="w-50">
       <v-row align="center" justify="center" dense>
         <v-col v-for="navLink in navLinks.slice(0,4)" :key="navLink.id">
-          <v-chip class="body-text pa-4" :to="navLink.route" variant="text"
+          <v-btn :to="navLink.route" variant="outlined" size="small"
                   color="accent" type="button" :text="navLink.name" />
+        </v-col>
+        <v-col v-if="userData.isAuthenticated">
+          <v-btn color="secondary" to="dashboard" variant="flat" size="small">Dashboard</v-btn>
+        </v-col>
+        <v-col>
+          <v-btn v-if="userData.isAuthenticated" color="secondary" @click="userData.logout" variant="flat" size="small">Logout</v-btn>
+          <v-btn v-else color="secondary" @click="userData.loginWithRedirect" variant="flat" size="small">Login</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -72,9 +79,9 @@
       id: 3, route: "contact", name: "Contact",
     },
     {id: 4, route: "dashboard", name: "Dashboard"},
-    // {
-    //   id: 5, route: "login", name: "Login",
-    // },
+    {
+      id: 5, route: "login", name: "Login",
+    },
   ]
 
 </script>
