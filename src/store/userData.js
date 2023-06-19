@@ -57,7 +57,13 @@ export const useUserDataStore = defineStore('userData',  () => {
   }
 
   async function getCustomerData() {
-    const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/customer/${stripeCustomerID.value}`)
+    const token = await getAccessToken()
+    const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/customer/${stripeCustomerID.value}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
     stripeCustomerData.value = response.data
     stripeCustomerSubscriptions.value = response.data.subscriptions
 
