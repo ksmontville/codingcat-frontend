@@ -19,7 +19,7 @@
           <v-card-title class="body-text text-h5 pa-4">CodingCat, LLC</v-card-title>
             <v-card-text class="pa-4">
               <v-list class="rounded-lg body-text text-body-1 pa-2">
-                <v-list-item v-for="index in contactInfo">
+                <v-list-item v-for="index in contactInfo" :key="index">
                   {{ index }}
                 </v-list-item>
               </v-list>
@@ -47,7 +47,7 @@
 import TheContactForm from '@/components/TheContactForm'
 
 const contactTitle = "Contact"
-const contactInfo = ["2108 N ST", "STE 4789", "Sacramento, CA 95816", "(415) 429-5783", "meow@codingcat.io"]
+const contactInfo = ["2108 N ST", "STE 4789", "Sacramento, CA 95816", "(415) 780-1083", "meow@codingcat.io"]
 
 </script>
 
