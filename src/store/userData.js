@@ -68,7 +68,6 @@ export const useUserDataStore = defineStore('userData',  () => {
     stripeCustomerData.value = response.data
     stripeCustomerSubscriptions.items = response.data.subscriptions.data
     stripeCustomerSubscriptions.count = response.data.subscriptions.total_count
-    console.log(stripeCustomerSubscriptions.count)
   }
 
   async function getCustomerInvoices() {
