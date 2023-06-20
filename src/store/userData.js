@@ -1,4 +1,4 @@
-import {ref} from "vue";
+import {reactive, ref} from 'vue'
 import {defineStore} from 'pinia'
 import {useAuth0} from "@auth0/auth0-vue";
 import axios from "axios";
@@ -10,7 +10,8 @@ export const useUserDataStore = defineStore('userData',  () => {
   const customerDomains = ref("")
   const stripeCustomerID = ref("")
   const stripeCustomerData = ref("")
-  const stripeCustomerSubscriptions = ref("")
+  const stripeCustomerSubscriptions = reactive({})
+  const stripeCustomerInvoices = reactive({})
 
   if (localStorage.getItem("userData")) {
     const getState = (JSON.parse(localStorage.getItem("userData") || null ))
@@ -65,11 +66,24 @@ export const useUserDataStore = defineStore('userData',  () => {
         }
       });
     stripeCustomerData.value = response.data
-    stripeCustomerSubscriptions.value = response.data.subscriptions
-
+    stripeCustomerSubscriptions.items = response.data.subscriptions.data
+    stripeCustomerSubscriptions.count = response.data.subscriptions.total_count
+    console.log(stripeCustomerSubscriptions.count)
   }
 
-  return {loginWithRedirect, logout, getUserMetadata, getCustomerData, getAccessToken,
-    user, isAuthenticated, customerDomains, stripeCustomerID, stripeCustomerData, stripeCustomerSubscriptions,
+  async function getCustomerInvoices() {
+    const token = await getAccessToken()
+    const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/customer/${stripeCustomerID.value}/invoices`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      })
+    stripeCustomerInvoices.data = response.data.data
+    stripeCustomerInvoices.length = response.data.data.length
+  }
+
+  return {loginWithRedirect, logout, getUserMetadata, getCustomerData, getAccessToken, getCustomerInvoices,
+    user, isAuthenticated, customerDomains, stripeCustomerID, stripeCustomerData, stripeCustomerSubscriptions, stripeCustomerInvoices,
   }
 })
