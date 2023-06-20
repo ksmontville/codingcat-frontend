@@ -53,7 +53,9 @@ export const useUserDataStore = defineStore('userData',  () => {
         Authorization: `Bearer ${token}`
       }
     });
-    customerDomains.value = response.data.app_metadata.my_domains
+    if (response.data.app_metadata.my_domains) {
+      customerDomains.value = response.data.app_metadata.my_domains
+    }
     stripeCustomerID.value = response.data.app_metadata.stripe_customer_id
   }
 
