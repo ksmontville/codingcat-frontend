@@ -19,7 +19,7 @@
         </v-col>
         <v-col>
           <v-btn v-if="userData.isAuthenticated" color="secondary" @click="userData.logout" variant="flat" size="small">Logout</v-btn>
-          <v-btn v-else color="secondary" @click="userData.loginWithRedirect" variant="flat" size="small">Login</v-btn>
+          <v-btn v-else color="secondary" @click="userData.loginWithRedirect" variant="flat" size="small">Login/Register</v-btn>
         </v-col>
       </v-row>
     </v-container>
@@ -36,7 +36,7 @@
           Log Out
         </v-list-item>
         <v-list-item v-else @click="userData.loginWithRedirect" type="button">
-          Login In/Register
+          Login/Register
         </v-list-item>
         <v-divider color="primary" thickness="4"/>
         <v-list-item v-for="navLink in navLinks.slice(0,4)"
@@ -80,7 +80,7 @@
     },
     {id: 4, route: "dashboard", name: "Dashboard"},
     {
-      id: 5, route: "login", name: "Login",
+      id: 5, route: "login", name: "Login/Register",
     },
   ]
 
