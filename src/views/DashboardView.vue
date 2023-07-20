@@ -116,13 +116,15 @@
 
   onBeforeMount( async () => {
     if (userData.isAuthenticated) {
-      await userData.getCustomerData()
-      await userData.getCustomerInvoices()
-      await userData.getUserMetadata()
-      isLoading.value = false
-    }
-    else {
-      alert("There was an error with the login service. Please try again later.")
+      try {
+        await userData.getCustomerData()
+        await userData.getCustomerInvoices()
+        await userData.getUserMetadata()
+        isLoading.value = false
+      }
+      catch (error) {
+        alert("There was an unexpected error with the login service. Please try again later.")
+      }
     }
   })
 
