@@ -124,9 +124,7 @@
   onBeforeMount( async () => {
     if (userData.isAuthenticated) {
       try {
-        await userData.getCustomerData()
-        await userData.getCustomerInvoices()
-        await userData.getUserMetadata()
+        await Promise.all([userData.getCustomerData(), userData.getCustomerInvoices(), userData.getUserMetadata()])
         isLoading.value = false
       }
       catch (error) {
