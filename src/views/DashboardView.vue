@@ -108,13 +108,17 @@
   //     customerSubscriptions.value = userData.stripeCustomerData.subscriptions;
   //   })
 
-  if (userData.isAuthenticated) {
-    onMounted( async () => {
+
+  onMounted( async () => {
+    if (userData.isAuthenticated) {
       await userData.getUserMetadata()
       await userData.getCustomerData()
       await userData.getCustomerInvoices()
-    })
-  }
+    }
+    else {
+      alert("There was an error with the login service. Please try again later.")
+    }
+  })
 
 </script>
 
