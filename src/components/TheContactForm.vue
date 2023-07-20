@@ -8,10 +8,6 @@
       <v-textarea bg-color="" label="How can we help you?" v-model="message" name="message" :rules="rules"/>
       <v-btn color="highlight" class="align-self-center my-4" type="submit">Submit</v-btn>
 
-      <v-label>{{from_name}}</v-label>
-      <v-label>{{from_email}}</v-label>
-      <v-label>{{message}}</v-label>
-
     </v-form>
   </v-sheet>
 
