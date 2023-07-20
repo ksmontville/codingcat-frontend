@@ -84,7 +84,6 @@
       <p class="text-center text-h6">
         Loading your dashboard... <v-progress-circular indeterminate />
       </p>
-
     </v-container>
 
 </template>
@@ -93,7 +92,7 @@
   import TheContactForm from "@/components/TheContactForm";
   import StripeCustomerPortal from "@/components/StripeCustomerPortal.vue";
   import {useUserDataStore} from "@/store/userData";
-  import {onMounted,ref} from "vue";
+  import {onBeforeMount, onMounted, onUpdated, ref} from "vue";
 
   const userData =  useUserDataStore()
   const isLoading = ref(true)
@@ -115,7 +114,7 @@
   //   })
 
 
-  onMounted( async () => {
+  onBeforeMount( async () => {
     if (userData.isAuthenticated) {
       await userData.getCustomerData()
       await userData.getCustomerInvoices()
