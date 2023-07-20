@@ -4,7 +4,7 @@
     <p class="tbody-text text-h5 text-md-h4 ma-4">{{userData.user.email}}</p>
   </v-sheet>
 
-    <v-container class="my-4" v-if="!isLoading">
+    <v-container class="my-4" v-if="!isLoading && !loadFailed">
 
       <v-row align="start" justify="center">
         <v-col cols="12" sm="6" md="6" lg="4">
@@ -81,10 +81,16 @@
     </v-container>
 
     <v-container v-else>
-      <p class="text-center text-h6">
+      <p class="text-center text-h6" v-if=!loadFailed>
         Loading your dashboard... <v-progress-circular indeterminate />
       </p>
+      <p class="text-center text-h6" v-else>
+        There was an unexpected error with the login service. Please try again later.
+      </p>
     </v-container>
+
+<!--    <v-container v-if="loadFailed">-->
+<!--    </v-container>-->
 
 </template>
 
@@ -96,6 +102,7 @@
 
   const userData =  useUserDataStore()
   const isLoading = ref(true)
+  const loadFailed = ref(false)
   // const customerSubscriptions = ref("")
 
   const formIsActive = ref(null)
@@ -123,7 +130,7 @@
         isLoading.value = false
       }
       catch (error) {
-        alert("There was an unexpected error with the login service. Please try again later.")
+        loadFailed.value = true
       }
     }
   })
