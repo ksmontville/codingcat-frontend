@@ -7,20 +7,23 @@
       <v-text-field bg-color="" label="Email" v-model="from_email" name="from_email" :rules="rules"/>
       <v-textarea bg-color="" label="How can we help you?" v-model="message" name="message" :rules="rules"/>
       <v-btn color="highlight" class="align-self-center my-4" type="submit">Submit</v-btn>
+
+      <v-label>{{from_name}}</v-label>
+      <v-label>{{from_email}}</v-label>
+      <v-label>{{message}}</v-label>
+
     </v-form>
   </v-sheet>
 
   <v-sheet v-else class="body-text text-h5 ma-4 pa-4" rounded>
-
     {{ messageSent }}
-
   </v-sheet>
 
 
 </template>
 
 <script setup>
-import {reactive, ref} from "vue";
+import {ref} from "vue";
 import emailjs from "@emailjs/browser";
 
 const contactFormActive = ref(true)
@@ -55,12 +58,11 @@ const toggleContactForm = () => {
 
 const sendEmail = () => {
 
-  if (from_name.valueOf && from_email.valueOf && message.value) {
+  if (from_name.value && from_email.value && message.value) {
     emailjs.sendForm(serviceID, templateID, "form", publicKey)
     toggleContactForm()
   }
 }
-
 
 </script>
 
