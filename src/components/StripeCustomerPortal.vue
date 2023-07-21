@@ -17,7 +17,6 @@ const props = defineProps(
 const userData = useUserDataStore()
 
 const createPortalSession = async () => {
-  // const token = await userData.getManagementToken()
   const response = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/customer/${props.stripeCustomerId}/create-customer-portal-session`,
     {
       customer_id: props.stripeCustomerId
