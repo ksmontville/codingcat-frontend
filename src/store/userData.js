@@ -8,6 +8,7 @@ export const useUserDataStore = defineStore('userData',  () => {
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0()
 
   const managementToken = ref('')
+  const loadFailed = ref(false)
   const customerDomains = ref("")
   const stripeCustomerID = ref("")
   const stripeCustomerData = ref("")
@@ -91,12 +92,13 @@ export const useUserDataStore = defineStore('userData',  () => {
         await Promise.all([getCustomerData(), getCustomerInvoices(), getUserMetadata()])
       }
       catch (error) {
-        console.log(error)
+        loadFailed.value = true
       }
     }
 
 
-  return {loginWithRedirect, logout, managementToken, getManagementToken, getUserMetadata, getCustomerData, getCustomerInvoices, getAllData,
+  return {loginWithRedirect, logout, getManagementToken, getUserMetadata, getCustomerData, getCustomerInvoices, getAllData,
     user, isAuthenticated, customerDomains, stripeCustomerID, stripeCustomerData, stripeCustomerSubscriptions, stripeCustomerInvoices,
+    managementToken, loadFailed
   }
 })
