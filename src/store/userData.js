@@ -21,26 +21,26 @@ export const useUserDataStore = defineStore('userData',  () => {
     stripeCustomerSubscriptions.value = getState.stripeCustomerSubscriptions
   }
 
-  async function getAccessToken() {
-    const response = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/token`,
-      {
-        "username": import.meta.env.VITE_ACCESS_TOKEN_USERNAME,
-        "password": import.meta.env.VITE_ACCESS_TOKEN_PASSWORD,
-      },
-      {
-        headers: {
-          "Content-Type": "multipart/form-data"
-        }
-      })
-    return response.data.access_token
-  }
+  // async function getAccessToken() {
+  //   const response = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/token`,
+  //     {
+  //       "username": import.meta.env.VITE_ACCESS_TOKEN_USERNAME,
+  //       "password": import.meta.env.VITE_ACCESS_TOKEN_PASSWORD,
+  //     },
+  //     {
+  //       headers: {
+  //         "Content-Type": "multipart/form-data"
+  //       }
+  //     })
+  //   return response.data.access_token
+  // }
 
   async function getManagementToken() {
-    const token = await getAccessToken()
+    // const token = await getAccessToken()
     const response = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/management-token`,{}, {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
+      // headers: {
+      //   Authorization: `Bearer ${token}`
+      // }
     })
     return response.data.access_token
   }
@@ -60,7 +60,7 @@ export const useUserDataStore = defineStore('userData',  () => {
   }
 
   async function getCustomerData() {
-    const token = await getAccessToken()
+    const token = await getManagementToken()
     const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/customer/${stripeCustomerID.value}`,
       {
         headers: {
@@ -73,7 +73,7 @@ export const useUserDataStore = defineStore('userData',  () => {
   }
 
   async function getCustomerInvoices() {
-    const token = await getAccessToken()
+    const token = await getManagementToken()
     const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/customer/${stripeCustomerID.value}/invoices`,
       {
         headers: {
@@ -84,7 +84,7 @@ export const useUserDataStore = defineStore('userData',  () => {
     stripeCustomerInvoices.length = response.data.data.length
   }
 
-  return {loginWithRedirect, logout, getUserMetadata, getCustomerData, getAccessToken, getCustomerInvoices,
+  return {loginWithRedirect, logout, getUserMetadata, getCustomerData, getCustomerInvoices,
     user, isAuthenticated, customerDomains, stripeCustomerID, stripeCustomerData, stripeCustomerSubscriptions, stripeCustomerInvoices,
   }
 })
