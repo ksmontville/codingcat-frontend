@@ -40,9 +40,9 @@ export const useUserDataStore = defineStore('userData',  () => {
   async function getManagementToken() {
     // const token = await getAccessToken()
     const response = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/management-token`,{}, {
-      // headers: {
-      //   Authorization: `Bearer ${token}`
-      // }
+      headers: {
+        "Content-Type": "application/json"
+      }
     })
     managementToken.value = response.data.access_token
   }
