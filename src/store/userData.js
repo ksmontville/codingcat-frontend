@@ -7,6 +7,7 @@ export const useUserDataStore = defineStore('userData',  () => {
 
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0()
 
+  const managementToken = ref('')
   const customerDomains = ref("")
   const stripeCustomerID = ref("")
   const stripeCustomerData = ref("")
@@ -42,15 +43,15 @@ export const useUserDataStore = defineStore('userData',  () => {
       //   Authorization: `Bearer ${token}`
       // }
     })
-    return response.data.access_token
+    managementToken.value = response.data.access_token
   }
 
   async function getUserMetadata() {
-    const token = await getManagementToken()
+    // const token = await getManagementToken()
     const response = await axios.get(`${import.meta.env.VITE_AUTH0_MANAGEMENT_API_URL}/users/${user.value.sub}
 `, {
       headers: {
-        Authorization: `Bearer ${token}`
+        Authorization: `Bearer ${managementToken.value}`
       }
     });
     if (response.data.app_metadata.my_domains) {
@@ -60,11 +61,11 @@ export const useUserDataStore = defineStore('userData',  () => {
   }
 
   async function getCustomerData() {
-    const token = await getManagementToken()
+    // const token = await getManagementToken()
     const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/customer/${stripeCustomerID.value}`,
       {
         headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${managementToken.value}`
         }
       });
     stripeCustomerData.value = response.data
@@ -73,18 +74,32 @@ export const useUserDataStore = defineStore('userData',  () => {
   }
 
   async function getCustomerInvoices() {
-    const token = await getManagementToken()
+    // const token = await getManagementToken()
     const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/customer/${stripeCustomerID.value}/invoices`,
       {
         headers: {
-          Authorization: `Bearer ${token}`
+          Authorization: `Bearer ${managementToken.value}`
         }
       })
     stripeCustomerInvoices.data = response.data.data
     stripeCustomerInvoices.length = response.data.data.length
   }
 
-  return {loginWithRedirect, logout, getManagementToken, getUserMetadata, getCustomerData, getCustomerInvoices,
+    const getAllData = async () => {
+      try {
+        await getManagementToken()
+        await Promise.all([getCustomerData(), getCustomerInvoices(), getUserMetadata()])
+        console.log(stripeCustomerSubscriptions)
+        console.log(stripeCustomerInvoices)
+        console.log(stripeCustomerData.value)
+      }
+      catch (error) {
+        console.log(error)
+      }
+    }
+
+
+  return {loginWithRedirect, logout, getManagementToken, getUserMetadata, getCustomerData, getCustomerInvoices, getAllData,
     user, isAuthenticated, customerDomains, stripeCustomerID, stripeCustomerData, stripeCustomerSubscriptions, stripeCustomerInvoices,
   }
 })

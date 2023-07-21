@@ -115,24 +115,28 @@
     window.open(link)
   }
 
-  // watch(
-  //   userData, () => {
-  //     customerSubscriptions.value = userData.stripeCustomerData.subscriptions;
-  //   })
 
+  // onBeforeMount( async () => {
+  //
+  //   try {
+  //     await Promise.all([userData.getCustomerData(), userData.getCustomerInvoices(), userData.getUserMetadata()])
+  //     isLoading.value = false
+  //   }
+  //   catch (error) {
+  //     loadFailed.value = true
+  //   }
+  //
+  // })
 
-  onBeforeMount( async () => {
-    if (userData.isAuthenticated) {
-      try {
-        await Promise.all([userData.getCustomerData(), userData.getCustomerInvoices(), userData.getUserMetadata()])
-        isLoading.value = false
-      }
-      catch (error) {
-        loadFailed.value = true
-      }
+  onBeforeMount(async () => {
+    try {
+      await userData.getAllData()
+      isLoading.value = false
+    }
+    catch(error) {
+      loadFailed.value = true
     }
   })
-
 </script>
 
 <style scoped>
