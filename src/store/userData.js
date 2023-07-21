@@ -89,9 +89,6 @@ export const useUserDataStore = defineStore('userData',  () => {
       try {
         await getManagementToken()
         await Promise.all([getCustomerData(), getCustomerInvoices(), getUserMetadata()])
-        console.log(stripeCustomerSubscriptions)
-        console.log(stripeCustomerInvoices)
-        console.log(stripeCustomerData.value)
       }
       catch (error) {
         console.log(error)
