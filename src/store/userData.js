@@ -99,7 +99,7 @@ export const useUserDataStore = defineStore('userData',  () => {
     }
 
 
-  return {loginWithRedirect, logout, getManagementToken, getUserMetadata, getCustomerData, getCustomerInvoices, getAllData,
+  return {loginWithRedirect, logout, managementToken, getManagementToken, getUserMetadata, getCustomerData, getCustomerInvoices, getAllData,
     user, isAuthenticated, customerDomains, stripeCustomerID, stripeCustomerData, stripeCustomerSubscriptions, stripeCustomerInvoices,
   }
 })
