@@ -132,6 +132,7 @@
       userData.loadFailed.value = true
     }
   })
+
 </script>
 
 <style scoped>

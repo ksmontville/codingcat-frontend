@@ -7,7 +7,7 @@ export const useUserDataStore = defineStore('userData',  () => {
 
   const { loginWithRedirect, logout, user, isAuthenticated } = useAuth0()
 
-  const managementToken = ref('')
+  const managementToken = ref("")
   const loadFailed = ref(false)
   const customerDomains = ref("")
   const stripeCustomerID = ref("")
@@ -38,8 +38,7 @@ export const useUserDataStore = defineStore('userData',  () => {
   // }
 
   async function getManagementToken() {
-    // const token = await getAccessToken()
-    const response = await axios.post(`${import.meta.env.VITE_BACKEND_API_URL}/management-token`,{}, {
+    const response = await axios.get(`${import.meta.env.VITE_BACKEND_API_URL}/management-token`, {
       headers: {
         "Content-Type": "application/json"
       }
