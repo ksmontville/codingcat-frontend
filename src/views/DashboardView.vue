@@ -1,5 +1,5 @@
 <template>
-  <v-sheet class="d-flex flex-column align-center pa-4">
+  <v-sheet class="bg-white d-flex flex-column align-center pa-4">
     <p class="text-h4 text-md-h3 text-center ma-4">{{ userData.user.name }}'s Dashboard</p>
     <p class="tbody-text text-h5 text-md-h4 ma-4">{{userData.user.email}}</p>
   </v-sheet>

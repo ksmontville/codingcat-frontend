@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-import {reactive, ref} from "vue";
+import {ref} from "vue";
 import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 import emailjs from "@emailjs/browser";

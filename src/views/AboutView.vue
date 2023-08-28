@@ -1,6 +1,6 @@
 <template>
 
-  <v-sheet class="text-h2 text-center pa-4 my-4">
+  <v-sheet class="bg-white text-h2 text-center pa-4 my-4">
     {{ aboutTitle }}
   </v-sheet>
 

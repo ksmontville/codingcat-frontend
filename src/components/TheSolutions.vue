@@ -36,7 +36,7 @@
       </v-col>
 
       <v-col>
-        <v-card color="primary" class="d-flex flex-column ma-auto pa-2" max-width="400" height="224">
+        <v-card color="indigo-lighten-4" class="d-flex flex-column ma-auto pa-2" max-width="400" height="224">
           <v-card-title>Get Started</v-card-title>
           <v-card-text class="body-text text-body-2 mt-4">
             {{ scheduleText }}
@@ -53,7 +53,7 @@
       <v-col class="mt-4" cols="12">
         <v-expand-transition>
           <v-sheet v-if="showConsultForm">
-            <p class="text-h6 text-center pa-2">Schedule Your Free Consultation</p>
+            <p class="text-h6 text-center pa-2">Schedule Your Free Virtual Consultation</p>
             <the-consult-form />
           </v-sheet>
         </v-expand-transition>

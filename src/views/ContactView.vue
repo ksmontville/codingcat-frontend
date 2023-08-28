@@ -6,7 +6,7 @@
 
       <v-col cols="12">
 
-        <v-sheet class="pa-4">
+        <v-sheet class="bg-white pa-4">
           <p class="text-h2 text-center">{{ contactTitle }}</p>
           <p class="body-text text-body-1 my-8">
           CodingCat operates remotely from the San Francisco Bay Area, but we are capable and excited to begin

@@ -1,17 +1,17 @@
 <template>
 
-  <v-sheet>
-    <v-table class="text-center" density="comfortable" fixed-header>
+  <v-sheet class="bg-white">
+    <v-table class="bg-white text-center" density="comfortable" fixed-header>
       <thead>
         <tr>
-          <th v-for="tableHeader in tableHeaders" :key="tableHeader" class="text-h6 text-center">{{ tableHeader }}</th>
+          <th v-for="tableHeader in tableHeaders" :key="tableHeader" class="bg-primary text-h6 text-center">{{ tableHeader }}</th>
         </tr>
       </thead>
         <tbody>
         <tr v-for="planBullet in planBullets" :key="planBullet.id">
           <td class="body-text text-body-2">{{ planBullet.plan }}</td>
           <td>
-            <v-btn class="text-button ma-4" @click="planBullet.dialog = true">View</v-btn>
+            <v-btn class="text-button ma-4" color="secondary" @click="planBullet.dialog = true">View</v-btn>
               <v-dialog v-model="planBullet.dialog" max-width="800" :fullscreen="mobile" transition="scale-transition">
                 <v-sheet color="primary" class="d-flex flex-column justify-center align-center body-text text-body-1 pa-4">
                   <p class="body-text text-body-1 pa-4">
@@ -27,7 +27,7 @@
               </v-dialog>
           </td>
           <td>
-            <v-sheet class="body-text text-body-2" :min-width="minSheetWidth">
+            <v-sheet class="bg-white body-text text-body-2" :min-width="minSheetWidth">
               {{ planBullet.cost }}
             </v-sheet>
           </td>

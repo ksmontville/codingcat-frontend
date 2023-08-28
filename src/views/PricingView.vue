@@ -4,7 +4,7 @@
     <v-row align="start" justify="center">
 
       <v-col cols="12">
-          <v-sheet class="text-h2 text-center pa-4">{{ pricingHeader }}</v-sheet>
+          <v-sheet class="bg-white text-h2 text-center pa-4">{{ pricingHeader }}</v-sheet>
           <p class="body-text text-body-1 my-4 pa-4">{{ pricingText }}</p>
       </v-col>
 
