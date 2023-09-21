@@ -2,11 +2,11 @@
   <v-sheet color="white" class="d-flex flex-column justify-center align-center">
     <p class="text-h4 body-text text-center">Satisfied Cat-stomers</p>
 
-    <v-row align="center" justify="center">
+    <v-row justify="center">
       <v-col v-for="testimonial in testimonials" :key="testimonial.title" md="6">
-        <v-card class="my-4 mx-auto pa-4" max-width="400" variant="elevated" color="primary" rounded border>
-          <v-img :src="testimonial.image" height="256" cover />
-          <v-card-title class="text-center ma-2">
+        <v-card class="my-4 mx-auto pa-4" max-width="364" variant="elevated" color="primary" rounded border>
+          <v-img :src="testimonial.image" height="256" />
+          <v-card-title class="text-center">
             <v-btn class="my-2" size="large" @click="openLink(testimonial.link)" color="secondary" variant="text" type="button">
               {{ testimonial.title }}
             </v-btn>
