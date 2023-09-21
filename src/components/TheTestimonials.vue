@@ -38,8 +38,9 @@
 </template>
 
 <script setup>
-
   import {reactive} from "vue";
+  import srhcLogo from '@/assets/img/srhc-logo-dark.png'
+  import bmgLogo from '@/assets/img/blackmoongames-logo.png'
 
   const testimonials = reactive([
     {
@@ -54,7 +55,7 @@
         "He also has been easy to get a hold of since the initial set up to make edits/additions as our practice continues to evolve. " +
         "I would highly recommend Kyle to anyone looking to create a website or redesign their current one. " +
         "Switching from a megacorporation to a small business was a great move!",
-      image: "./src/assets/img/srhc-logo-dark.png",
+      image: srhcLogo,
       rating: 5.0,
       link: "https://srhealthcenter.com",
       isShowing: false,
@@ -63,7 +64,7 @@
       title: "Black Moon Games",
       subtitle: "Tony from New Hampshire",
       text: "CodingCat whipped up an attractive and user friendly site that greatly improved my traffic and customer engagement!",
-      image: "./src/assets/img/blackmoongames-logo.png",
+      image: bmgLogo,
       rating: 4.5,
       link: "https://www.black-moon-games.com",
       isShowing: false,
