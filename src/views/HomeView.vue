@@ -10,17 +10,15 @@
     <v-divider color="secondary" :thickness="mobile? 4 : 12" class="mb-4 rounded"/>
 
     <v-row align="baseline" justify="center">
-      <v-col md="12">
-
-          <the-solutions />
-
+      <v-col cols="12" md="8">
+        <the-solutions />
       </v-col>
 
-      <v-col cols="12" md="6" class="my-4">
+      <v-col cols="12" md="4" class="my-4">
         <the-services />
       </v-col>
 
-      <v-col cols="12" md="6">
+      <v-col cols="12">
        <the-testimonials />
       </v-col>
 

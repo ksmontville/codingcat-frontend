@@ -1,13 +1,12 @@
 <template>
 
   <v-container fluid>
-    <v-row align="start" justify="center">
-
+    <v-row align="start">
       <v-col cols="12">
         <p class="text-h4 body-text text-center">{{ solutionsText }}</p>
       </v-col>
 
-      <v-col cols="12" md="4" v-for="heroBullet in heroBullets" :key="heroBullet.id">
+      <v-col cols="12" md="6" v-for="heroBullet in heroBullets" :key="heroBullet.id">
 
         <v-card :color="heroBullet.id % 2 === 0 ? 'secondary' : 'primary'" class="d-flex flex-column ma-auto pa-2" max-width="400" height="224">
           <v-card-title @click="toggleDialog">{{ heroBullet.title }}</v-card-title>
@@ -35,7 +34,7 @@
         </v-card>
       </v-col>
 
-      <v-col>
+      <v-col md="6">
         <v-card color="indigo-lighten-4" class="d-flex flex-column ma-auto pa-2" max-width="400" height="224">
           <v-card-title>Get Started</v-card-title>
           <v-card-text class="body-text text-body-2 mt-4">

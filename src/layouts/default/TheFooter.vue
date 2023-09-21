@@ -1,6 +1,6 @@
 <template>
 
-  <v-footer class="my-12 pa-4 w-100" color="accent" rounded>
+  <v-footer class="pa-4 w-100" :class="mobile ? 'my-12' : 'my-0'" color="accent" rounded>
     <v-row justify="center">
       <v-col cols="12" md="4" class="d-flex justify-center">
         <small>&copy; 2023 CodingCat, LLC</small>
