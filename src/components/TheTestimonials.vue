@@ -7,7 +7,7 @@
         <v-card class="my-4 mx-auto pa-4" max-width="364" variant="elevated" color="primary" rounded border>
           <v-img :src="testimonial.image" height="256" />
           <v-card-title class="text-center">
-            <v-btn class="my-2" size="large" @click="openLink(testimonial.link)" color="secondary" variant="text" type="button">
+            <v-btn class="my-2 text-decoration-underline" size="large" @click="openLink(testimonial.link)" color="secondary" variant="text" type="button">
               {{ testimonial.title }}
             </v-btn>
           </v-card-title>
